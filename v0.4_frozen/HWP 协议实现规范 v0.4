@@ -1,0 +1,24 @@
+# HWP 协议实现规范 v0.4
+
+## 1. 协议字段定义与计算方法
+
+### entropy_score
+计算节点的熵值，反映认知结构的复杂度。
+
+\[
+\text{entropy\_score} = -\sum{p_i \log p_i}
+\]
+
+### drift_rate
+衡量结构演化过程中变量的“漂移”程度，越低表示演化越稳定。
+
+\[
+\text{drift\_rate} = 1 - \frac{\text{shared\_variables}}{\text{total\_variables}}
+\]
+
+### collapse_event
+当节点进入收敛状态时触发 collapse，表示当前路径或节点无法继续发展。
+
+### recovery_protocol
+当节点进入 collapse 状态时，执行 recovery，恢复节点的多路径结构。
+
